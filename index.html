@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sounny - Digital Exploring the world</title>
+    <meta name="description" content="Sounny's personal website">
+    <meta name="author" content="Sounny">
+    <meta property="og:title" content="Sounny - Digital Exploring the world">
+    <meta property="og:description" content="Sounny's personal website">
+    <meta property="og:type" content="website">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --isu-blue: #0b3d91;
+            --isu-gold: #f0b429;
+            --isu-ink: #0d1b2a;
+            --isu-sky: #e6f1ff;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        }
+        
+        .navbar {
+            background-color: var(--isu-blue);
+        }
+        
+        .hero {
+            background-color: var(--isu-sky);
+            padding: 5rem;
+            text-align: center;
+        }
+        
+        .project-card {
+            margin-bottom: 2rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem;
+        }
+        
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            border-left: 2px solid var(--isu-gold);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            top: 0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: var(--isu-gold);
+        }
+        
+        .dark-mode {
+            background-color: var(--isu-ink);
+            color: var(--isu-sky);
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to content</a>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Sounny</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cv">CV</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <button id="themeToggle" class="btn btn-link" aria-label="Toggle theme">
+                    <i class="bi bi-moon-stars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main id="main">
+        <section class="hero">
+            <h1>Sounny</h1>
+            <p>Digital Exploring the world</p>
+            <button class="btn btn-primary" onclick="location.href='#projects'">Projects</button>
+            <button class="btn btn-secondary" onclick="location.href='#cv'">CV</button>
+            <button class="btn btn-secondary" onclick="location.href='#contact'">Contact</button>
+            <p>Unofficial student page. ‘International Space University’ named here for study use only.</p>
+        </section>
+        <section id="about" class="container mt-5">
+            <h2>About</h2>
+            <p>Hi, I'm Sounny, a student at ISU Faculty in France. I'm passionate about Earth Observation.</p>
+            <h3>Focus</h3>
+            <ul>
+                <li>Earth Observation</li>
+                <li>Digital Exploration</li>
+                <li>Space Studies</li>
+            </ul>
+            <h3>Tools</h3>
+            <ul>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>GIS</li>
+                <li>Remote Sensing</li>
+                <li>Data Analysis</li>
+                <li>Machine Learning</li>
+            </ul>
+        </section>
+        <section id="projects" class="container mt-5">
+            <h2>Projects</h2>
+            <div class="row">
+                <div class="col-md-4 project-card">
+                    <h3>Project 1</h3>
+                    <p>Goal: Analyze satellite imagery for land use classification.</p>
+                    <ul>
+                        <li>Tool: Python</li>
+                        <li>Method: Machine Learning</li>
+                        <li>Outcome: Accurate land use classification</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="location.href='https://example.com/demo1'">Demo</button>
+                    <button class="btn btn-secondary" onclick="location.href='https://example.com/code1'">Code</button>
+                </div>
+                <div class="col-md-4 project-card">
+                    <h3>Project 2</h3>
+                    <p>Goal: Develop a web application for visualizing climate data.</p>
+                    <ul>
+                        <li>Tool: JavaScript</li>
+                        <li>Method: Data Visualization</li>
+                        <li>Outcome: Interactive climate data visualization</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="location.href='https://example.com/demo2'">Demo</button>
+                    <button class="btn btn-secondary" onclick="location.href='https://example.com/code2'">Code</button>
+                </div>
+                <div class="col-md-4 project-card">
+                    <h3>Project 3</h3>
+                    <p>Goal: Investigate the impact of climate change on ecosystems.</p>
+                    <ul>
+                        <li>Tool: GIS</li>
+                        <li>Method: Spatial Analysis</li>
+                        <li>Outcome: Insights into climate change impacts</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="location.href='https://example.com/demo3'">Demo</button>
+                    <button class="btn btn-secondary" onclick="location.href='https://example.com/code3'">Code</button>
+                </div>
+            </div>
+        </section>
+        <section id="experience" class="container mt-5">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Research Assistant</h3>
+                    <p>ISU Faculty, France</p>
+                    <p>2022-2023</p>
+                    <p>Assisted in research projects on Earth Observation and Space Studies.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Teaching Assistant</h3>
+                    <p>ISU Faculty, France</p>
+                    <p>2023-2024</p>
+                    <p>Assisted in teaching courses on Digital Exploration and Space Studies.</p>
+                </div>
+            </div>
+        </section>
+        <section id="cv" class="container mt-5">
+            <h2>CV</h2>
+            <button id="cvBtn" class="btn btn-primary" style="display: none;" onclick="location.href='cv.pdf'">Open CV</button>
+            <p id="cvNote">Add cv.pdf to enable the CV button</p>
+        </section>
+        <section id="contact" class="container mt-5">
+            <h2>Contact</h2>
+            <p>Email: <span id="email">sounny@example.com</span></p>
+            <a id="mailLink" href="mailto:sounny@example.com" class="btn btn-primary">Email</a>
+            <button id="copyEmailBtn" class="btn btn-secondary">Copy email</button>
+        </section>
+        <section id="edit-checklist" class="container mt-5">
+            <h2>Edit Checklist</h2>
+            <ul>
+                <li>Update profile image</li>
+                <li>Add more projects</li>
+                               <li>Update experience section</li>
+                <li>Add cv.pdf</li>
+            </ul>
+        </section>
+    </main>
+    <footer class="container mt-5">
+        <p>&copy; <span id="year"></span> Sounny. Unofficial student page.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        themeToggle.addEventListener('click', () => {
+            if (html.getAttribute('data-bs-theme') === 'light') {
+                html.setAttribute('data-bs-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-bs-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Set theme based on local storage
+        const theme = localStorage.getItem('theme');
+        if (theme) {
+            html.setAttribute('data-bs-theme', theme);
+        }
+        
+        // CV check
+        fetch('cv.pdf')
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('cvBtn').style.display = 'inline-block';
+                    document.getElementById('cvNote').style.display = 'none';
+                }
+            })
+            .catch(() => {});
+        
+        // Contact helpers
+        const email = 'sounny@example.com';
+        document.getElementById('email').textContent = email;
+        document.getElementById('mailLink').href = `mailto:${email}`;
+        document.getElementById('copyEmailBtn').addEventListener('click', () => {
+            navigator.clipboard.writeText(email);
+            alert('Email copied to clipboard!');
+        });
+        
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
