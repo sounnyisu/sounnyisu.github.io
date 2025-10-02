@@ -3,105 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sounny - Digital Exploring the world</title>
+    <title>Sounny - Digital Exploration</title>
     <meta name="description" content="Sounny's personal website">
     <meta name="author" content="Sounny">
-    <meta property="og:title" content="Sounny - Digital Exploring the world">
+    <meta property="og:title" content="Sounny - Digital Exploration">
     <meta property="og:description" content="Sounny's personal website">
     <meta property="og:type" content="website">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
         :root {
-            --isu-blue: #0b3d91;
-            --isu-gold: #f0b429;
-            --isu-ink: #0d1b2a;
-            --isu-sky: #e6f1ff;
+            --bg-light: #f8f8f8;
+            --bg-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --text-dark: #111111;
+            --gray: #ccc;
+            --accent: #999;
         }
-        
-        body {
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+
+        html, body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
         }
-        
+
+        [data-bs-theme="dark"] {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
         .navbar {
-            background-color: var(--isu-blue);
+            background-color: transparent;
+            border-bottom: 1px solid var(--gray);
         }
-        
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+        .nav-link {
+            color: inherit;
+            margin-right: 1rem;
+        }
+
         .hero {
-            background-color: var(--isu-sky);
-            padding: 5rem;
+            padding: 6rem 2rem;
             text-align: center;
+            background-color: #f2f2f2;
         }
-        
+
+        [data-bs-theme="dark"] .hero {
+            background-color: #222;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            border-radius: 0;
+            padding: 0.6rem 1.2rem;
+            margin: 0.25rem;
+        }
+
+        .btn-primary {
+            background-color: #111;
+            border: none;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #aaa;
+            color: inherit;
+        }
+
+        .btn-primary:hover,
+        .btn-secondary:hover {
+            opacity: 0.85;
+        }
+
+        section {
+            padding: 4rem 1rem;
+        }
+
+        h2, h3 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li::before {
+            content: "– ";
+            color: var(--accent);
+        }
+
         .project-card {
-            margin-bottom: 2rem;
-        }
-        
-        .timeline {
-            position: relative;
             padding: 2rem;
-        }
-        
-        .timeline::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 50%;
-            height: 100%;
-            border-left: 2px solid var(--isu-gold);
-        }
-        
-        .timeline-item {
-            position: relative;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
             margin-bottom: 2rem;
         }
-        
+
+        [data-bs-theme="dark"] .project-card {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+        }
+
+        .timeline {
+            border-left: 2px solid #aaa;
+            padding-left: 2rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
         .timeline-item::before {
             content: "";
-            position: absolute;
-            top: 0.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1rem;
-            height: 1rem;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            background-color: var(--isu-gold);
+            background: #999;
+            position: absolute;
+            left: -7px;
+            top: 5px;
         }
-        
-        .dark-mode {
-            background-color: var(--isu-ink);
-            color: var(--isu-sky);
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid #ccc;
+        }
+
+        [data-bs-theme="dark"] footer {
+            border-top: 1px solid #444;
+            color: #aaa;
+        }
+
+        .visually-hidden-focusable {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        #cvNote {
+            font-style: italic;
+            color: #777;
         }
     </style>
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to content</a>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Sounny</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#cv">CV</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
                 <button id="themeToggle" class="btn btn-link" aria-label="Toggle theme">
-                    <i class="bi bi-moon-stars"></i>
+                    <i class="bi bi-circle-half"></i>
                 </button>
             </div>
         </div>
@@ -109,15 +192,18 @@
     <main id="main">
         <section class="hero">
             <h1>Sounny</h1>
-            <p>Digital Exploring the world</p>
-            <button class="btn btn-primary" onclick="location.href='#projects'">Projects</button>
-            <button class="btn btn-secondary" onclick="location.href='#cv'">CV</button>
-            <button class="btn btn-secondary" onclick="location.href='#contact'">Contact</button>
-            <p>Unofficial student page. ‘International Space University’ named here for study use only.</p>
+            <p>Digital Exploration of the World</p>
+            <div>
+                <button class="btn btn-primary" onclick="location.href='#projects'">Projects</button>
+                <button class="btn btn-secondary" onclick="location.href='#cv'">CV</button>
+                <button class="btn btn-secondary" onclick="location.href='#contact'">Contact</button>
+            </div>
+            <p class="mt-4" style="font-size: 0.9rem;">Unofficial faculty page. ‘International Space University’ named here for study use only.</p>
         </section>
-        <section id="about" class="container mt-5">
+
+        <section id="about" class="container">
             <h2>About</h2>
-            <p>Hi, I'm Sounny, a student at ISU Faculty in France. I'm passionate about Earth Observation.</p>
+            <p>Hi, I'm Sounny, part of the ISU Faculty in France. I'm passionate about Earth Observation.</p>
             <h3>Focus</h3>
             <ul>
                 <li>Earth Observation</li>
@@ -134,12 +220,13 @@
                 <li>Machine Learning</li>
             </ul>
         </section>
-        <section id="projects" class="container mt-5">
+
+        <section id="projects" class="container">
             <h2>Projects</h2>
             <div class="row">
                 <div class="col-md-4 project-card">
                     <h3>Project 1</h3>
-                    <p>Goal: Analyze satellite imagery for land use classification.</p>
+                    <p>Analyze satellite imagery for land use classification.</p>
                     <ul>
                         <li>Tool: Python</li>
                         <li>Method: Machine Learning</li>
@@ -150,91 +237,94 @@
                 </div>
                 <div class="col-md-4 project-card">
                     <h3>Project 2</h3>
-                    <p>Goal: Develop a web application for visualizing climate data.</p>
+                    <p>Develop a web application for visualizing climate data.</p>
                     <ul>
                         <li>Tool: JavaScript</li>
                         <li>Method: Data Visualization</li>
-                        <li>Outcome: Interactive climate data visualization</li>
+                        <li>Outcome: Interactive visualization</li>
                     </ul>
                     <button class="btn btn-primary" onclick="location.href='https://example.com/demo2'">Demo</button>
                     <button class="btn btn-secondary" onclick="location.href='https://example.com/code2'">Code</button>
                 </div>
                 <div class="col-md-4 project-card">
                     <h3>Project 3</h3>
-                    <p>Goal: Investigate the impact of climate change on ecosystems.</p>
+                    <p>Investigate the impact of climate change on ecosystems.</p>
                     <ul>
                         <li>Tool: GIS</li>
                         <li>Method: Spatial Analysis</li>
-                        <li>Outcome: Insights into climate change impacts</li>
+                        <li>Outcome: Climate impact insights</li>
                     </ul>
                     <button class="btn btn-primary" onclick="location.href='https://example.com/demo3'">Demo</button>
                     <button class="btn btn-secondary" onclick="location.href='https://example.com/code3'">Code</button>
                 </div>
             </div>
         </section>
-        <section id="experience" class="container mt-5">
+
+        <section id="experience" class="container">
             <h2>Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>Research Assistant</h3>
+                    <h3>Research Faculty</h3>
                     <p>ISU Faculty, France</p>
-                    <p>2022-2023</p>
-                    <p>Assisted in research projects on Earth Observation and Space Studies.</p>
+                    <p>2022–2023</p>
+                    <p>Led research on Earth Observation and Space Studies.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>Teaching Assistant</h3>
+                    <h3>Course Instructor</h3>
                     <p>ISU Faculty, France</p>
-                    <p>2023-2024</p>
-                    <p>Assisted in teaching courses on Digital Exploration and Space Studies.</p>
+                    <p>2023–2024</p>
+                    <p>Taught Digital Exploration and Space Studies.</p>
                 </div>
             </div>
         </section>
-        <section id="cv" class="container mt-5">
+
+        <section id="cv" class="container">
             <h2>CV</h2>
             <button id="cvBtn" class="btn btn-primary" style="display: none;" onclick="location.href='cv.pdf'">Open CV</button>
-            <p id="cvNote">Add cv.pdf to enable the CV button</p>
+            <p id="cvNote">Add <code>cv.pdf</code> to enable the CV button</p>
         </section>
-        <section id="contact" class="container mt-5">
+
+        <section id="contact" class="container">
             <h2>Contact</h2>
             <p>Email: <span id="email">sounny@example.com</span></p>
             <a id="mailLink" href="mailto:sounny@example.com" class="btn btn-primary">Email</a>
             <button id="copyEmailBtn" class="btn btn-secondary">Copy email</button>
         </section>
-        <section id="edit-checklist" class="container mt-5">
+
+        <section id="edit-checklist" class="container">
             <h2>Edit Checklist</h2>
             <ul>
-                <li>Update profile image</li>
+                <li>Upload profile image</li>
                 <li>Add more projects</li>
-                               <li>Update experience section</li>
-                <li>Add cv.pdf</li>
+                <li>Update experience section</li>
+                <li>Add <code>cv.pdf</code></li>
             </ul>
         </section>
     </main>
-    <footer class="container mt-5">
-        <p>&copy; <span id="year"></span> Sounny. Unofficial student page.</p>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Sounny. Unofficial faculty page.</p>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Theme toggle
         const themeToggle = document.getElementById('themeToggle');
         const html = document.documentElement;
         themeToggle.addEventListener('click', () => {
-            if (html.getAttribute('data-bs-theme') === 'light') {
-                html.setAttribute('data-bs-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                html.setAttribute('data-bs-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }
+            const current = html.getAttribute('data-bs-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-bs-theme', next);
+            localStorage.setItem('theme', next);
         });
-        
-        // Set theme based on local storage
-        const theme = localStorage.getItem('theme');
-        if (theme) {
-            html.setAttribute('data-bs-theme', theme);
+
+        // Apply saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            html.setAttribute('data-bs-theme', savedTheme);
         }
-        
-        // CV check
+
+        // Enable CV button if file exists
         fetch('cv.pdf')
             .then(response => {
                 if (response.ok) {
@@ -243,18 +333,20 @@
                 }
             })
             .catch(() => {});
-        
-        // Contact helpers
+
+        // Email functions
         const email = 'sounny@example.com';
         document.getElementById('email').textContent = email;
         document.getElementById('mailLink').href = `mailto:${email}`;
         document.getElementById('copyEmailBtn').addEventListener('click', () => {
-            navigator.clipboard.writeText(email);
-            alert('Email copied to clipboard!');
+            navigator.clipboard.writeText(email).then(() => {
+                alert('Email copied to clipboard!');
+            });
         });
-        
-        // Year
+
+        // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
+
