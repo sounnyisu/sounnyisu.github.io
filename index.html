@@ -31,6 +31,19 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
         }
+        [data-bs-theme="dark"] .navbar {
+            border-bottom: 1px solid #444;
+        }
+        [data-bs-theme="dark"] .btn-primary {
+            background-color: #ffffff;
+            color: #111;
+        }
+        [data-bs-theme="dark"] .btn-secondary {
+            border-color: #666;
+        }
+        [data-bs-theme="dark"] .navbar-toggler-icon {
+            filter: invert(1);
+        }
         .navbar {
             background-color: transparent;
             border-bottom: 1px solid var(--gray);
@@ -42,6 +55,20 @@
         .nav-link {
             color: inherit;
             margin-right: 1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        .nav-link:hover {
+            color: #007bff !important;
+            background-color: rgba(0, 123, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        [data-bs-theme="dark"] .nav-link:hover {
+            color: #ffffff !important;
+            background-color: rgba(255, 255, 255, 0.1);
         }
         .hero {
             padding: 6rem 2rem;
@@ -309,14 +336,20 @@
             html.setAttribute('data-bs-theme', savedTheme);
         }
         // Enable CV button if file exists
-        fetch('cv.pdf')
-            .then(response => {
+        async function checkCVExists() {
+            try {
+                const response = await fetch('cv.pdf', { method: 'HEAD' });
                 if (response.ok) {
                     document.getElementById('cvBtn').style.display = 'inline-block';
                     document.getElementById('cvNote').style.display = 'none';
                 }
-            })
-            .catch(() => {});
+            } catch (error) {
+                console.log('CV file not available');
+                document.getElementById('cvBtn').style.display = 'none';
+                document.getElementById('cvNote').style.display = 'block';
+            }
+        }
+        checkCVExists();
         // Email functions
         const email = 'sounny@example.com';
         document.getElementById('email').textContent = email;
